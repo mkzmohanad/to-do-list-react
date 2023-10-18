@@ -1,0 +1,191 @@
+:root {
+  --bgColor : #b3c1f9;
+  --boxColor : rgb(233, 233, 233);
+  --mainColor : #9b4bfd;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color:var(--bgColor);
+}
+.to-do-list {
+  width:75% !important;
+  height:75vh;
+  padding: 0 !important;
+  background-color: var(--boxColor);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+  position: relative;
+  overflow-y: scroll;
+}
+header,footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: var(--mainColor);
+  width: 100%;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding:25px;
+}
+form input[type="text"] {
+  width:85%;
+  margin-right: 25px;
+  padding:10px;
+  outline: none;
+  border: 1px solid var(--mainColor);
+  background-color:#eee;
+  
+}
+form input[type="text"]::placeholder {
+  color: var(--mainColor);
+  font-size: 1.2em;
+}
+form button {
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  background-color: var(--mainColor);
+  outline: none;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  cursor: pointer;
+  transition:0.6s;
+}
+ul {
+  list-style: none;
+  padding: 0 2rem !important;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin-bottom:25px;
+  font-size: 1.2em;
+  text-transform:capitalize;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--mainColor);
+  position: relative;
+  word-break: break-all;
+}
+ul li .check-box-task {
+  display: flex;
+  align-items: center;
+}
+ul li input {
+  width: 30px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: var(--mainColor);
+  cursor: pointer;
+}
+ul li input[type="text"] {
+  width: fit-content;
+  border: none;
+  outline: none;
+  background-color: var(--boxColor);
+  cursor:text;
+}
+ul .completed label {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+ul .completed::after {
+  content: "";
+  background-color: var(--mainColor);
+  width: 92%;
+  height: 2px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+ul li label {
+  cursor: pointer;
+}
+ul li p {
+  margin-bottom:0;
+  margin-left: 15px;
+  font-size:0.7em
+}
+ul li .icons-btns {
+  display: flex;
+  align-items: center;
+}
+ul li i {
+  margin-left:15px;
+  color: var(--mainColor);
+  cursor: pointer;
+}
+ul li .edit-btns {
+  width: fit-content;
+  font-size:0.75em;
+}
+ul li .edit-btns:first-child {
+  margin-right: 10px;
+}
+.disabled {
+  opacity:.5!important;
+  cursor: default;
+  transition: 0.3s;
+}
+.empty-list {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  text-align: center;
+  text-transform:uppercase;
+  font-size: 1.5em;
+  padding:0 10px;
+}
+
+.to-do-list footer {
+  position:absolute;
+  /* bottom: 0; */
+  left: 0;
+  height: 8vh;
+  margin: 0;
+}
+footer button {
+  margin-left: 10px;
+}
+footer button i {
+  margin-left: 5px;
+}
+footer button:hover {
+  background-color: var(--boxColor);
+  color: var(--mainColor);
+}
+@media(width < 996px) {
+  .to-do-list {
+    width:85% !important;
+  }
+}
+@media(width < 768px) {
+  .to-do-list {
+    width:100% !important;
+  }
+  ul .completed::after {
+    width:85%;
+  }
+}
